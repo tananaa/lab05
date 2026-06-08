@@ -97,14 +97,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tanya/tananaa/workspace/lab05/_build/CMakeFiles /home/tanya/tananaa/workspace/lab05/_build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /home/tanya/tananaa/workspace/lab05/_build && $(CMAKE_COMMAND) -E cmake_progress_start /home/tanya/tananaa/workspace/lab05/_build/CMakeFiles /home/tanya/tananaa/workspace/lab05/_build/banking//CMakeFiles/progress.marks
+	cd /home/tanya/tananaa/workspace/lab05/_build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 banking/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/tanya/tananaa/workspace/lab05/_build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /home/tanya/tananaa/workspace/lab05/_build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 banking/clean
 .PHONY : clean
 
 # The main clean target
@@ -113,92 +113,80 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/tanya/tananaa/workspace/lab05/_build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 banking/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/tanya/tananaa/workspace/lab05/_build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 banking/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/tanya/tananaa/workspace/lab05/_build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named check
+# Convenience name for target.
+banking/CMakeFiles/banking.dir/rule:
+	cd /home/tanya/tananaa/workspace/lab05/_build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 banking/CMakeFiles/banking.dir/rule
+.PHONY : banking/CMakeFiles/banking.dir/rule
 
-# Build rule for target.
-check: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 check
-.PHONY : check
-
-# fast build rule for target.
-check/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/check.dir/build.make CMakeFiles/check.dir/build
-.PHONY : check/fast
-
-#=============================================================================
-# Target rules for targets named banking
-
-# Build rule for target.
-banking: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 banking
+# Convenience name for target.
+banking: banking/CMakeFiles/banking.dir/rule
 .PHONY : banking
 
 # fast build rule for target.
 banking/fast:
-	$(MAKE) $(MAKESILENT) -f banking/CMakeFiles/banking.dir/build.make banking/CMakeFiles/banking.dir/build
+	cd /home/tanya/tananaa/workspace/lab05/_build && $(MAKE) $(MAKESILENT) -f banking/CMakeFiles/banking.dir/build.make banking/CMakeFiles/banking.dir/build
 .PHONY : banking/fast
 
-tests/test_account.o: tests/test_account.cpp.o
-.PHONY : tests/test_account.o
+Account.o: Account.cpp.o
+.PHONY : Account.o
 
 # target to build an object file
-tests/test_account.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/check.dir/build.make CMakeFiles/check.dir/tests/test_account.cpp.o
-.PHONY : tests/test_account.cpp.o
+Account.cpp.o:
+	cd /home/tanya/tananaa/workspace/lab05/_build && $(MAKE) $(MAKESILENT) -f banking/CMakeFiles/banking.dir/build.make banking/CMakeFiles/banking.dir/Account.cpp.o
+.PHONY : Account.cpp.o
 
-tests/test_account.i: tests/test_account.cpp.i
-.PHONY : tests/test_account.i
+Account.i: Account.cpp.i
+.PHONY : Account.i
 
 # target to preprocess a source file
-tests/test_account.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/check.dir/build.make CMakeFiles/check.dir/tests/test_account.cpp.i
-.PHONY : tests/test_account.cpp.i
+Account.cpp.i:
+	cd /home/tanya/tananaa/workspace/lab05/_build && $(MAKE) $(MAKESILENT) -f banking/CMakeFiles/banking.dir/build.make banking/CMakeFiles/banking.dir/Account.cpp.i
+.PHONY : Account.cpp.i
 
-tests/test_account.s: tests/test_account.cpp.s
-.PHONY : tests/test_account.s
+Account.s: Account.cpp.s
+.PHONY : Account.s
 
 # target to generate assembly for a file
-tests/test_account.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/check.dir/build.make CMakeFiles/check.dir/tests/test_account.cpp.s
-.PHONY : tests/test_account.cpp.s
+Account.cpp.s:
+	cd /home/tanya/tananaa/workspace/lab05/_build && $(MAKE) $(MAKESILENT) -f banking/CMakeFiles/banking.dir/build.make banking/CMakeFiles/banking.dir/Account.cpp.s
+.PHONY : Account.cpp.s
 
-tests/test_transaction.o: tests/test_transaction.cpp.o
-.PHONY : tests/test_transaction.o
+Transaction.o: Transaction.cpp.o
+.PHONY : Transaction.o
 
 # target to build an object file
-tests/test_transaction.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/check.dir/build.make CMakeFiles/check.dir/tests/test_transaction.cpp.o
-.PHONY : tests/test_transaction.cpp.o
+Transaction.cpp.o:
+	cd /home/tanya/tananaa/workspace/lab05/_build && $(MAKE) $(MAKESILENT) -f banking/CMakeFiles/banking.dir/build.make banking/CMakeFiles/banking.dir/Transaction.cpp.o
+.PHONY : Transaction.cpp.o
 
-tests/test_transaction.i: tests/test_transaction.cpp.i
-.PHONY : tests/test_transaction.i
+Transaction.i: Transaction.cpp.i
+.PHONY : Transaction.i
 
 # target to preprocess a source file
-tests/test_transaction.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/check.dir/build.make CMakeFiles/check.dir/tests/test_transaction.cpp.i
-.PHONY : tests/test_transaction.cpp.i
+Transaction.cpp.i:
+	cd /home/tanya/tananaa/workspace/lab05/_build && $(MAKE) $(MAKESILENT) -f banking/CMakeFiles/banking.dir/build.make banking/CMakeFiles/banking.dir/Transaction.cpp.i
+.PHONY : Transaction.cpp.i
 
-tests/test_transaction.s: tests/test_transaction.cpp.s
-.PHONY : tests/test_transaction.s
+Transaction.s: Transaction.cpp.s
+.PHONY : Transaction.s
 
 # target to generate assembly for a file
-tests/test_transaction.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/check.dir/build.make CMakeFiles/check.dir/tests/test_transaction.cpp.s
-.PHONY : tests/test_transaction.cpp.s
+Transaction.cpp.s:
+	cd /home/tanya/tananaa/workspace/lab05/_build && $(MAKE) $(MAKESILENT) -f banking/CMakeFiles/banking.dir/build.make banking/CMakeFiles/banking.dir/Transaction.cpp.s
+.PHONY : Transaction.cpp.s
 
 # Help Target
 help:
@@ -210,13 +198,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... banking"
-	@echo "... check"
-	@echo "... tests/test_account.o"
-	@echo "... tests/test_account.i"
-	@echo "... tests/test_account.s"
-	@echo "... tests/test_transaction.o"
-	@echo "... tests/test_transaction.i"
-	@echo "... tests/test_transaction.s"
+	@echo "... Account.o"
+	@echo "... Account.i"
+	@echo "... Account.s"
+	@echo "... Transaction.o"
+	@echo "... Transaction.i"
+	@echo "... Transaction.s"
 .PHONY : help
 
 
@@ -228,6 +215,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/tanya/tananaa/workspace/lab05/_build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y libgtest-dev libgmock-dev lcov
+    
+    - name: Configure CMake
+      run: cmake -H. -B_build -DBUILD_TESTS=ON
+    
+    - name: Build
+      run: cmake --build _build
+    
+    - name: Run tests
+      run: ./_build/check
+    
+    - name: Generate coverage
+      run: |
+        lcov --capture --directory . --output-file coverage.info --no-external
+        lcov --remove coverage.info '/usr/*' --output-file coverage.info
+        lcov --list coverage.info
+    
+    - name: Upload to Coveralls
+      uses: coverallsapp/github-action@v2
+      with:
+        file: coverage.info
