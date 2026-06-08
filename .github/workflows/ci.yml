@@ -16,7 +16,11 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt update
-        sudo apt install -y libgtest-dev libgmock-dev lcov
+        sudo apt install -y libgtest-dev cmake
+        cd /usr/src/gtest
+        sudo cmake CMakeLists.txt
+        sudo make
+        sudo cp lib/*.a /usr/lib
     
     - name: Configure CMake
       run: cmake -H. -B_build -DBUILD_TESTS=ON
@@ -26,14 +30,3 @@ jobs:
     
     - name: Run tests
       run: ./_build/check
-    
-    - name: Generate coverage
-      run: |
-        lcov --capture --directory . --output-file coverage.info --no-external
-        lcov --remove coverage.info '/usr/*' --output-file coverage.info
-        lcov --list coverage.info
-    
-    - name: Upload to Coveralls
-      uses: coverallsapp/github-action@v2
-      with:
-        file: coverage.info
